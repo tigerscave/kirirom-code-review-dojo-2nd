@@ -14,6 +14,7 @@ const calculatedChange = document.getElementById("calculatedChange")
 function display(goodsName, goodsPrice) {
     purchaseGoodsNameDisplay.textContent = goodsName
     purchaseGoodsPriceDisplay.textContent = goodsPrice
+    calculatedChange.textContent = 0
     paymentInput.value = ""
 }
 

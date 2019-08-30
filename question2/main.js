@@ -1,9 +1,6 @@
 'use strict'
 
 //write code in here
-let tax = 0
-let taxIncludedPrice = 0
-
 const taxPriceElement = document.getElementById('taxPrice')
 const taxIncludedPriceElement = document.getElementById('taxIncludedPrice')
 const priceInput = document.getElementById('priceInput')
@@ -12,9 +9,9 @@ const calculateButton = document.getElementById('calculateButton')
 const resetButton = document.getElementById('resetButton')
 
 function calculate() {
-  tax = parseInt(priceInput.value) * (parseInt(taxRatioInput.value) / 100)
+  let tax = parseInt(priceInput.value) * (parseInt(taxRatioInput.value) / 100)
   tax = Math.round(parseInt(tax))
-  taxIncludedPrice = parseInt(priceInput.value) + tax
+  let taxIncludedPrice = parseInt(priceInput.value) + tax
 
   taxPriceElement.textContent = tax
   taxIncludedPriceElement.textContent = taxIncludedPrice
@@ -22,11 +19,8 @@ function calculate() {
   taxRatioInput.value = ''
 }
 function reset() {
-  tax = 0
-  taxIncludedPrice = 0
-
-  taxPriceElement.textContent = tax
-  taxIncludedPriceElement.textContent = taxIncludedPrice
+  taxPriceElement.textContent = 0
+  taxIncludedPriceElement.textContent = 0
   priceInput.value = ''
   taxRatioInput.value = ''
 }

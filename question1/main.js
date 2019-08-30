@@ -2,7 +2,7 @@
 
 //write code in here
 
-let output = 0
+var output = 0
 
 const numberElement = document.getElementById('number')
 const plusButton = document.getElementById('plus')

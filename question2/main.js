@@ -11,20 +11,31 @@ const resetButton = document.getElementById ("resetButton")
 const taxPrice = document.getElementById("taxPrice")
 const taxIncludedPrice = document.getElementById("taxIncludedPrice")
 
+function clearInput () {
+    priceInput.value = null
+    taxInput.value = null
+}
+
 calculateButton.addEventListener('click', () => {
+
+    if(isNaN(priceInput.value) || isNaN(taxInput.value)) {
+        alert('Invalid Input')
+    } 
+
     const price = parseInt(priceInput.value)
     const taxRatio = parseInt(taxInput.value)
-
+    
     const taxPriceResult = Math.floor((price * taxRatio) / 100)
 
     taxPrice.textContent = taxPriceResult
     taxIncludedPrice.textContent = Math.floor(price + taxPriceResult)
 
-    priceInput.value = null
-    taxInput.value = null
+    clearInput()
 })
 
 resetButton.addEventListener('click', () => {
     taxPrice.textContent = 0
     taxIncludedPrice.textContent = 0
+
+    clearInput()
 })

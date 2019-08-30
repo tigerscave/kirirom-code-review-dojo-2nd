@@ -23,18 +23,18 @@ let selectedGoodsPrice = 0
 function displayProductNameAndPrice(product, price) {
   paymentInput.value = ''
   calculatedChangeElement.innerHTML = ''
-  goodsNameElement.innerHTML = product
-  goodsPriceElement.innerHTML = price
+  goodsNameElement.textContent = product
+  goodsPriceElement.textContent = price
   selectedGoodsPrice = price
 }
 
 function calculateChange(paymentInput) {
-  const changeAmount = Math.round((paymentInput - selectedGoodsPrice) * todayExchangeRate)
-  calculatedChangeElement.innerHTML = changeAmount
+  const changeAmount = Math.round((parseFloat(paymentInput) - selectedGoodsPrice) * todayExchangeRate)
+  calculatedChangeElement.textContent = changeAmount
 }
 
 cocaColaItem.addEventListener('click', () => displayProductNameAndPrice("Coca-cola", "1.15"))
 angkorBeerItem.addEventListener('click', () => displayProductNameAndPrice("Angkor Beer", "2.25"))
 moringaLunchItem.addEventListener('click', () => displayProductNameAndPrice("Moringa Lunch", "3.5"))
 bookServiceItem.addEventListener('click', () => displayProductNameAndPrice("Book", "4.5"))
-calculateChangeButton.addEventListener('click', () => calculateChange(parseFloat(paymentInput.value)))
+calculateChangeButton.addEventListener('click', () => calculateChange(paymentInput.value))

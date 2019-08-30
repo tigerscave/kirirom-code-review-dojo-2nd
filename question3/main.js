@@ -18,18 +18,18 @@ const onGoodsClicked = (goodsName, price) => {
 }
 
 const onCalculateBtnClicked = () => {
-    let paymentVal = paymentInput.value
+    const paymentVal = paymentInput.value
 
     if(isNaN(paymentVal) || paymentVal === '') return
 
-    let result = Math.floor((paymentVal -  Number(purchaseGoodsPrice.textContent)) * 4091)
+    const result = Math.floor((paymentVal -  Number(purchaseGoodsPrice.textContent)) * 4091)
     calculatedChange.innerHTML = result
     paymentInput.value = null
 }
 
 for(let i = 0; i < goodsElements.length; i++){
-    let goodsName = goodsElements[i].childNodes[1].textContent
-    let goodsPrice = goodsElements[i].childNodes[3].innerHTML.slice(1)
+    const goodsName = goodsElements[i].childNodes[1].textContent
+    const goodsPrice = goodsElements[i].childNodes[3].innerHTML.slice(1)
     goodsElements[i].addEventListener('click', () => onGoodsClicked(goodsName, goodsPrice))
 }
 

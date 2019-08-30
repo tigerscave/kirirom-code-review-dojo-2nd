@@ -8,6 +8,6 @@ function changeNum(number)
 {
   textElement.textContent=number
 }
-plusButton.addEventListener('click', () => changeNum(count += 1))
+plusButton.addEventListener('click', () => changeNum(++count))
 minusButton.addEventListener('click', () => changeNum(--count))
 resetButton.addEventListener('click', () => changeNum(count = 0))

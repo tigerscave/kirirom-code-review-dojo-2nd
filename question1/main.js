@@ -8,11 +8,11 @@ const minusButton = document.getElementById('minus')
 const resetButton = document.getElementById('reset')
 const numberElement = document.getElementById('number')
 
-function calculate(operation){
-  if(operation == '+'){
+function calculate(operator){
+  if(operator == '+'){
     output = output + 1
   }
-  else if(operation == '-'){
+  else if(operator == '-'){
     output = output - 1
   }
   numberElement.textContent = output

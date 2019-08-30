@@ -20,33 +20,27 @@ function calculateChange(){
     }
 function displayitem(item, price){
     if(item == 'coca'){
-        purchaseGoodsName.textContent = 'Coca-Cola'
-        purchaseGoodsPrice.textContent = price
-        calculatedChange.textContent = ''
-        paymentInput.value = ''
+        display(item, value)
     }
     else if (item == 'beer'){
-        purchaseGoodsName.textContent = 'Angkor Beer'
-        purchaseGoodsPrice.textContent = price
-        calculatedChange.textContent = ''
-        paymentInput.value = ''
+        display(item, value)
     }
     else if (item == 'lunch'){
-        purchaseGoodsName.textContent = 'Moringa Lunch'
-        purchaseGoodsPrice.textContent = price
-        calculatedChange.textContent = ''
-        paymentInput.value = ''
+        display(item, value)
     }
     else if (item == 'book'){
-        purchaseGoodsName.textContent = 'Book'
-        purchaseGoodsPrice.textContent = price
-        calculatedChange.textContent = ''
-        paymentInput.value = ''
+        display(item, value)
     }
 }
-cocaCola.addEventListener('click', ()=> displayitem('coca', 1.15))
-angkorBeer.addEventListener('click', ()=> displayitem('beer', 2.25))
-moringaLunch.addEventListener('click', ()=> displayitem('lunch', 3.5))
-book.addEventListener('click', ()=> displayitem('book', 4.5))
+function displayItem(item, price){
+    purchaseGoodsName.textContent = item
+    purchaseGoodsPrice.textContent = price
+    calculatedChange.textContent = ''
+    paymentInput.value = ''
+}
+cocaCola.addEventListener('click', ()=> display('coca', 1.15))
+angkorBeer.addEventListener('click', ()=> display('beer', 2.25))
+moringaLunch.addEventListener('click', ()=> display('lunch', 3.5))
+book.addEventListener('click', ()=> display('book', 4.5))
 calculateButton.addEventListener('click', calculateChange)
 

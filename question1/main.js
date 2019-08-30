@@ -7,7 +7,7 @@ const resetButton = document.getElementById("reset")
 
 let number = 0
 
-function counter(action) {
+function countNumber(action) {
     if(action == '+') {
         ++ number
     }
@@ -20,6 +20,6 @@ function counter(action) {
     numberElement.textContent = number
 }
 
-plusButton.addEventListener('click', () => counter('+'))
-minusButton.addEventListener('click', () => counter('-'))
-resetButton.addEventListener('click', () => counter('reset'))
+plusButton.addEventListener('click', () => countNumber('+'))
+minusButton.addEventListener('click', () => countNumber('-'))
+resetButton.addEventListener('click', () => countNumber('reset'))

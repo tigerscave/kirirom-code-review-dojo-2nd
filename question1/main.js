@@ -9,10 +9,10 @@ let number = 0
 
 function countNumber(action) {
     if(action == '+') {
-        ++ number
+        ++number
     }
     else if(action == '-') {
-        -- number
+        --number
     }
     else {
         number = 0

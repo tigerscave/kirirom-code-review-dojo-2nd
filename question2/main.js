@@ -22,8 +22,8 @@ function calculate(){
   else{
     let tax = parseInt(price.value) * (parseInt(taxRatio.value) / 100)
     let totalPrice = parseInt(price.value) + tax
-    taxOutput.textContent = parseInt(tax)
-    total.textContent = parseInt(totalPrice)
+    taxOutput.textContent = Math.floor(tax)
+    total.textContent = Math.floor(totalPrice)
   }
 }
 function reset(){

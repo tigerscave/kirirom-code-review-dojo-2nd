@@ -1,29 +1,31 @@
 "use strict"
-
 //write code in here
 
-const cocaColaBtn = document.getElementById('cocaCola')
-const angkorBtn = document.getElementById('angkorBeer')
-const moringaLunchBtn = document.getElementById('moringaLunch')
-const purchaseGoodsPrice = document.getElementById('purchaseGoodsPrice')
-const bookBtn = document.getElementById('book')
-const input = document.getElementById('paymentInput')
+const cocacola = document.getElementById('cocaCola')
+const angkorbeer = document.getElementById('angkorBeer')
+const moringalunch = document.getElementById('moringaLunch')
+const book = document.getElementById('book')
 const purchaseName = document.getElementById('purchaseGoodsName')
-const calculatedChange = document.getElementById('calculatedChange')
-function priceShow (goods,price) 
-{
-    purchaseName.textContent = goods
-    purchaseGoodsPrice.textContent = price   
+const purchasePrice = document.getElementById('purchaseGoodsPrice')
+const paymentInput = document.getElementById('paymentInput')
+const calButton = document.getElementById('calculateButton')
+const change = document.getElementById('calculatedChange')
+
+const PriceCalculation = (good, price) => () => {
+    purchaseName.textContent = good
+    purchasePrice.textContent = price
+    paymentInput.value = ''
 }
 
-
-function calculate()
+function calculation() 
 {
-    let val = parseInt(input.val)
-    calculatedChange.textContent = 
+    let payment = parseInt(paymentInput.value)
+    let goodPrice =parseFloat(purchasePrice.textContent)
+    change.textContent = ((payment-goodPrice)*4091).toFixed(2)
 }
 
-cocaColaBtn.addEventListener('click',()=>priceShow('cocaCola', '1.15'))
-angkorBtn.addEventListener('click',()=>priceShow('angkorBeer', '2.25'))
-moringaLunchBtn.addEventListener('click',()=>priceShow('moringaLunch','3.5'))
-bookBtn.addEventListener('click',()=>priceShow('book','4.5'))
+book.addEventListener('click', PriceCalculation('Book', '4.5'))
+moringalunch.addEventListener('click', PriceCalculation('Moringa Lunch', '3.5'))
+angkorbeer.addEventListener('click', PriceCalculation('Angkor Beer', '2.25'))
+cocacola.addEventListener('click', PriceCalculation('Coca-cola', '1.15'))
+calButton.addEventListener('click', () => calculation())

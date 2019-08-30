@@ -12,8 +12,7 @@ let clickedGoods = ''
 let goodsPrice = 0
 
 function onGoodsClick(goods) {
-    let goodsId = getGoodsId(goods)
-    clickedGoods = document.getElementById(goodsId)
+    clickedGoods = document.getElementById(goods.id)
     goodsPrice = clickedGoods.children[1].textContent
     goodsPrice = parseFloat(goodsPrice.slice(1,goodsPrice.length))
     purchaseGoodsName.textContent = clickedGoods.children[0].textContent
@@ -23,13 +22,9 @@ function onGoodsClick(goods) {
 }
 
 function onCalculateChangeClick() {
-    let change = parseFloat(paymentInput.value) - goodsPrice
+    const change = parseFloat(paymentInput.value) - goodsPrice
     calculatedChange.textContent = Math.round(change * khrExchangeRate)
     paymentInput.value = ''
-}
-
-function getGoodsId(goods) {
-    return goods.id
 }
 
 calculateButton.addEventListener('click', onCalculateChangeClick)

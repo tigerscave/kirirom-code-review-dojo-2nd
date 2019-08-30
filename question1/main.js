@@ -5,8 +5,9 @@ const count = document.getElementById('number')
 const plusButton = document.getElementById('plus')
 const minusButton = document.getElementById('minus')
 const resetButton = document.getElementById('reset')  
-var num = 0
 const numberElement = document.getElementById('number')
+
+let num = 0
 
 function increase() {
     num++

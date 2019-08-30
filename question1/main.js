@@ -4,19 +4,19 @@ const minusButton = document.getElementById('minus')
 const resetButton = document.getElementById('reset')
 let output = 0
 
-function calculate(calculation)
+function calculate(operator)
 {
-  if(calculation == 'plus')
+  if(operator == 'plus')
   {
     output += 1
     number.textContent = output
   }
-  else if(calculation == 'minus')
+  else if(operator == 'minus')
   {
     output -= 1
     number.textContent = output
   }
-  else if(calculation == "reset")
+  else if(operator == "reset")
   {
     output = 0 
     number.textContent = output

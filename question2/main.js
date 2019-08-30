@@ -11,23 +11,24 @@ function calculateButtonClick() {
     let priceInputValue = parseInt(priceInput.value)
     let taxRatioInputValue = parseInt(taxRatioInput.value)
 
-    if(taxRatioInputValue < 0 || taxRatioInputValue > 60) {
+    if(taxRatioInputValue < 0 || taxRatioInputValue > 60 || isNaN(taxRatioInputValue)) {
         alert("Invalid tax")
+        resetButtonClick()
         return
     }
     else if(isNaN(priceInputValue)) {
-        priceInputValue = 0
+        alert("IInvalid price")
+        resetButtonClick()
+        return
     }
-    else if(isNaN(taxRatioInputValue)) {
-        taxRatioInputValue = 0
-    }
-
-    let taxPrice = parseInt(priceInputValue * (taxRatioInputValue/ 100))
-    taxPriceElement.textContent = taxPrice
-    taxIncludedPriceElement.textContent = priceInputValue + taxPrice
+    else {
+        let taxPrice = parseInt(priceInputValue * (taxRatioInputValue / 100))
+        taxPriceElement.textContent = taxPrice
+        taxIncludedPriceElement.textContent = priceInputValue + taxPrice
+    }    
 }
 
-function resetButtonClick(){
+function resetButtonClick() {
     priceInput.value = ""
     taxRatioInput.value = ""
     taxPriceElement.textContent = 0

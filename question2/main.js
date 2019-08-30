@@ -12,6 +12,13 @@ resetButton.addEventListener('click', reset)
 function calculateTax(){
     var price = Number(priceInput.value)
     var taxRate = Number(taxInput.value)
+
+    if(taxRate<0 || taxRate>60)
+    {
+        alert("Wrong input")
+        return 
+    }
+
     var taxResult = Math.round(price * taxRate / 100)
     var taxPriceResult = price + taxResult
 

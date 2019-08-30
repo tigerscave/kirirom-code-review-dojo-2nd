@@ -15,10 +15,10 @@ calculateButton.addEventListener('click', () => {
     const price = parseInt(priceInput.value)
     const taxRatio = parseInt(taxInput.value)
 
-    const taxPriceResult = (price * taxRatio) / 100
+    const taxPriceResult = Math.floor((price * taxRatio) / 100)
 
     taxPrice.textContent = taxPriceResult
-    taxIncludedPrice.textContent = price + taxPriceResult
+    taxIncludedPrice.textContent = Math.floor(price + taxPriceResult)
 
     priceInput.value = null
     taxInput.value = null

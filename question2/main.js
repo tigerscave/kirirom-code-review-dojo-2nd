@@ -25,6 +25,7 @@ function reset() {
     priceInput.value = ''
     taxRatioInput.value = ''
 }
+
 function validTax(taxRatio){
     if(taxRatio<0 || taxRatio>60)
     alert('Invalid tax ratio entered')

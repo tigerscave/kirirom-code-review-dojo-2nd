@@ -10,8 +10,6 @@ const taxOutput = document.getElementById('taxPrice')
 const total = document.getElementById('taxIncludedPrice')
 
 function calculate(){
-  let tax = 0
-  let totalPrice = 0
   if(price.value == "" && taxRatio.value == ""){
     alert("Please input price and tax ratio")
   }
@@ -22,8 +20,8 @@ function calculate(){
     alert("Please input tax ratio")
   }
   else{
-    tax = parseInt(price.value) * (parseInt(taxRatio.value)/100)
-    totalPrice = parseInt(price.value) + tax
+    let tax = parseInt(price.value) * (parseInt(taxRatio.value) / 100)
+    let totalPrice = parseInt(price.value) + tax
     taxOutput.textContent = parseInt(tax)
     total.textContent = parseInt(totalPrice)
   }

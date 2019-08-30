@@ -10,7 +10,7 @@ const resetBtn = document.getElementById('reset')
 const onBtnClicked = (operation) => () => {
   if (operation === 'plus') number.textContent = (++initNum).toString()
   else if(operation === 'minus') number.textContent = (--initNum).toString()
-  else {
+  else if(operation === 'reset'){
     initNum = 0
     number.textContent = '0'
   }

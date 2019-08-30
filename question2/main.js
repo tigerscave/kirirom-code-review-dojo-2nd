@@ -12,10 +12,10 @@ const taxPrice = document.getElementById("taxPrice")
 const taxIncludedPrice = document.getElementById("taxIncludedPrice")
 
 calculateButton.addEventListener('click', () => {
-    let price = parseInt(priceInput.value)
-    let taxRatio = parseInt(taxInput.value)
+    const price = parseInt(priceInput.value)
+    const taxRatio = parseInt(taxInput.value)
 
-    let taxPriceResult = (price * taxRatio) / 100
+    const taxPriceResult = (price * taxRatio) / 100
 
     taxPrice.textContent = taxPriceResult
     taxIncludedPrice.textContent = price + taxPriceResult

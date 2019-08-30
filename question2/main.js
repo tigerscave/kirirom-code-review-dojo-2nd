@@ -8,8 +8,8 @@ const taxInput = document.getElementById ("taxRatioInput")
 const calculateButton = document.getElementById ("calculateButton")
 const resetButton = document.getElementById ("resetButton")
 
-const taxPrice = document.getElementById("taxPrice")
-const taxIncludedPrice = document.getElementById("taxIncludedPrice")
+const taxPriceElement = document.getElementById("taxPrice")
+const taxIncludedPriceElement = document.getElementById("taxIncludedPrice")
 
 function clearInput () {
     priceInput.value = null
@@ -21,16 +21,17 @@ calculateButton.addEventListener('click', () => {
     if(isNaN(priceInput.value) || isNaN(taxInput.value) || priceInput.value == '' || taxInput.value == '') {
         alert('Invalid Input')
     } 
+    else {
+        const price = parseInt(priceInput.value)
+        const taxRatio = parseInt(taxInput.value)
 
-    const price = parseInt(priceInput.value)
-    const taxRatio = parseInt(taxInput.value)
+        const taxPriceResult = Math.floor((price * taxRatio) / 100)
 
-    const taxPriceResult = Math.floor((price * taxRatio) / 100)
+        taxPrice.textContent = taxPriceResult
+        taxIncludedPrice.textContent = Math.floor(price + taxPriceResult)
 
-    taxPrice.textContent = taxPriceResult
-    taxIncludedPrice.textContent = Math.floor(price + taxPriceResult)
-
-    clearInput()
+        clearInput()
+    }
 })
 
 resetButton.addEventListener('click', () => {

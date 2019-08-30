@@ -1,25 +1,25 @@
-const count = document.getElementById('number')
-const increase = document.getElementById('plus')
-const decrease = document.getElementById('minus')
-const reset = document.getElementById('reset')
+const numberElement = document.getElementById('number')
+const plusButton = document.getElementById('plus')
+const minusButton = document.getElementById('minus')
+const resetButton = document.getElementById('reset')
 
-var num = 1
+let num = 1
 
 function handleIncrease() {
   num++
-  count.textContent = num
+  numberElement.textContent = num
 }
 
 function handleReset(){
   num = 0
-  count.textContent = num
+  numberElement.textContent = num
 }
 
 function handleDecrease(number) {
   num--
-  count.textContent = num
+  numberElement.textContent = num
 }
 
-reset.addEventListener('click', handleReset)
-increase.addEventListener('click', handleIncrease)
-decrease.addEventListener('click', handleDecrease)
+resetButton.addEventListener('click', handleReset)
+plusButton.addEventListener('click', handleIncrease)
+minusButton.addEventListener('click', handleDecrease)

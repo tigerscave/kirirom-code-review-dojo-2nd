@@ -5,22 +5,22 @@ const priceElement = document.getElementById('priceInput')
 const taxElement = document.getElementById('taxRatioInput')
 const taxButton = document.getElementById('calculateButton')
 const resetButton = document.getElementById('resetButton')
-const taxPrice = document.getElementById('taxPrice')
-const taxIncludedPrice = document.getElementById('taxIncludedPrice')
-let priceNumber = 0
-let taxNumber = 0
+const taxPriceElement = document.getElementById('taxPrice')
+const taxIncludedPriceElement = document.getElementById('taxIncludedPrice')
 
 function calculateTax(){
-	if(isNaN(priceElement.value) || isNaN(taxElement.value) || priceElement.value =='' || taxElement.value == '')
+	let priceValue = priceElement.value
+	let taxValue = taxElement.value
+	if(isNaN(priceValue) || isNaN(taxValue) || taxValue == '' || priceValue == '')
 	{
 		alert("Invalid input entered");
 	}
 	else
 	{
-		taxNumber = Math.floor(parseInt(taxElement.value) * parseInt(priceElement.value)/100)
-		taxPrice.textContent = taxNumber
-		priceNumber = Math.floor(parseInt(priceElement.value) + taxNumber)
-		taxIncludedPrice.textContent = priceNumber
+		let taxPrice = Math.floor(parseInt(taxValue) * parseInt(priceValue)/100)
+		let includedTaxPrice = Math.floor(parseInt(priceValue) + taxPrice)	
+		taxPriceElement.textContent = taxPrice
+		taxIncludedPriceElement.textContent = includedTaxPrice
 		
 	}
 }
@@ -28,8 +28,8 @@ function calculateTax(){
 function resetAll(){
 	priceElement.value = null
 	taxElement.value = null
-	taxPrice.textContent = 0
-	taxIncludedPrice.textContent = 0
+	taxPriceElement.textContent = 0
+	taxIncludedPriceElement.textContent = 0
 }
 
 taxButton.addEventListener('click', calculateTax)

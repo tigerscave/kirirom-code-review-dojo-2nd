@@ -11,28 +11,11 @@ const paymentInput = document.getElementById('paymentInput')
 const calculateButton = document.getElementById('calculateButton')
 const calculatedChange = document.getElementById('calculatedChange')
 
-function cocaColaClick() {
-	displayGoodsName.textContent = "Coca-cola"
-	displayGoodsPrice.textContent = 1.15
+function goodsSelect(goodsName, goodsPrice) {
+	displayGoodsName.textContent = goodsName
+	displayGoodsPrice.textContent = goodsPrice
 	paymentInput.value = ""
-}
-
-function angkorBeerClick() {
-	displayGoodsName.textContent = "Angkor Beer"
-	displayGoodsPrice.textContent = 2.25
-	paymentInput.value = ""
-}
-
-function moringaLunchClick() {
-	displayGoodsName.textContent = "Moringa Lunch"
-	displayGoodsPrice.textContent = 3.5
-	paymentInput.value = ""
-}
-
-function bookClick() {
-	displayGoodsName.textContent = "Book"
-	displayGoodsPrice.textContent = 4.5
-	paymentInput.value = ""
+	calculatedChange.textContent = ""
 }
 
 function calculateChange() {
@@ -41,12 +24,12 @@ function calculateChange() {
 		let goodsPrice = parseInt(displayGoodsPrice.textContent) * 4091
 		calculatedChange.textContent = totalPayment - goodsPrice
 	} else {
-		alert(Ïnvalid Payment Input)
+		alert("Ïnvalid Payment Input")
 	}
 }
 
-cocaColaButton.addEventListener('click', cocaColaClick)
-angkorBeerButton.addEventListener('click', angkorBeerClick)
-moringaLunchButton.addEventListener('click', moringaLunchClick)
-bookButton.addEventListener('click', bookClick)
+cocaColaButton.addEventListener('click', () => goodsSelect('Coca-cola', 1.15))
+angkorBeerButton.addEventListener('click', () => goodsSelect('Angkor Beer', 2.25))
+moringaLunchButton.addEventListener('click', () => goodsSelect('Moringa Lunch', 3.5))
+bookButton.addEventListener('click', () => goodsSelect('Book', 4.5))
 calculateButton.addEventListener('click', calculateChange)

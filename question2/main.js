@@ -10,7 +10,7 @@ const resetButton = document.getElementById('resetButton')
 
 function calculate() {
   let tax = parseInt(priceInput.value) * (parseInt(taxRatioInput.value) / 100)
-  tax = Math.round(parseInt(tax))
+  tax = Math.floor(parseInt(tax))
   let taxIncludedPrice = parseInt(priceInput.value) + tax
 
   taxPriceElement.textContent = tax

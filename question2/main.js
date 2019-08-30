@@ -6,16 +6,16 @@ const resetButton = document.getElementById("resetButton")
 const taxPriceDisplay = document.getElementById("taxPrice")
 const taxIncludedPriceDisplay = document.getElementById("taxIncludedPrice")
 
-function calculateButtonClick(){
-    price = parseFloat(priceInput.value)
-    taxRate = parseFloat(taxRatioInput.value)
-    tax = (price * taxRate)/100
-    taxWithPrice = tax + price
+function calculateButtonClick() {
+    const price = parseFloat(priceInput.value)
+    const taxRate = parseFloat(taxRatioInput.value)
+    const tax = (price * taxRate) / 100
+    const taxWithPrice = tax + price
 
     taxPriceDisplay.textContent = Math.floor(tax)
     taxIncludedPriceDisplay.textContent = Math.floor(taxWithPrice)
 }
-function resetButtonClick(){
+function resetButtonClick() {
     taxPriceDisplay.textContent = 0
     taxIncludedPriceDisplay.textContent = 0
     priceInput.value = ''

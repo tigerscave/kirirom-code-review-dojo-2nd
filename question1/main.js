@@ -22,6 +22,6 @@ function reset() {
     count.textContent = num
 }
 
-plusButton.addEventListener('click', () => increase())
-minusButton.addEventListener('click',() => decrease())
-resetButton.addEventListener('click', () => reset())
+plusButton.addEventListener('click', increase())
+minusButton.addEventListener('click', decrease())
+resetButton.addEventListener('click', reset())

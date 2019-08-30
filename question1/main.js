@@ -18,7 +18,7 @@ function decrease() {
     count.textContent = num
 }
 function reset() {
-    num=0
+    num = 0
     count.textContent = num
 }
 

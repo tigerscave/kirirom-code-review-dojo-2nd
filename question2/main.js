@@ -5,17 +5,14 @@ const resetButton = document.getElementById('resetButton')
 const taxDisplay = document.getElementById('taxPrice')
 const taxPriceDisplay = document.getElementById('taxIncludedPrice')
 
-
-
 calculateTaxButton.addEventListener('click', calculateTax)
 resetButton.addEventListener('click', reset)
 
 
 function calculateTax(){
     var price = Number(priceInput.value)
-    var tax = Number(taxInput.value)
-
-    var taxResult = Math.round(price * tax / 100)
+    var taxRate = Number(taxInput.value)
+    var taxResult = Math.round(price * taxRate / 100)
     var taxPriceResult = price + taxResult
 
     taxDisplay.textContent = taxResult

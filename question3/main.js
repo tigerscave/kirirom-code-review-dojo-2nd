@@ -27,10 +27,10 @@ const onCalculateBtnClicked = () => {
     paymentInput.value = null
 }
 
-for(let i = 0; i < goodsElements.length; i++){
-    const goodsName = goodsElements[i].childNodes[1].textContent
-    const price = Number(goodsElements[i].childNodes[3].innerHTML.slice(1))
-    goodsElements[i].addEventListener('click', () => onGoodsClicked(goodsName, price))
+for(let goodsEle of goodsElements){
+    const goodsName = goodsEle.children[0].textContent
+    const price = Number(goodsEle.children[1].innerHTML.slice(1))
+    goodsEle.addEventListener('click', () => onGoodsClicked(goodsName, price))
 }
 
 calculateButton.addEventListener('click', onCalculateBtnClicked)

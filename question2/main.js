@@ -10,7 +10,7 @@ function calculateButtonClick(){
     price = parseFloat(priceInput.value)
     taxRate = parseFloat(taxRatioInput.value)
     tax = (price * taxRate)/100
-    taxWithPrice = (tax + price)
+    taxWithPrice = tax + price
 
     taxPriceDisplay.textContent = Math.floor(tax)
     taxIncludedPriceDisplay.textContent = Math.floor(taxWithPrice)

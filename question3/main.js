@@ -28,9 +28,9 @@ function calculateChange(){
 	}
 	else
 	{
-	let changeInDollars = parseInt(paymentValue) - parseInt(itemPriceValue)
-	let changeInRiels = changeInDollars * 4091
-	calculatedChange.textContent = changeInRiels
+		let changeInDollars = parseInt(paymentValue) - parseInt(itemPriceValue)
+		let changeInRiels = changeInDollars * 4091
+		calculatedChange.textContent = changeInRiels
 	}
 }
 cocaColaButton.addEventListener('click', () => buyItems("Coca-Cola", 1.15))

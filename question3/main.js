@@ -16,14 +16,14 @@ function showDetail(name, price){
     priceToPay.textContent = price 
 }
 function calculateChange(){
-  let amountReceived = Number(amountGiven.value)
-  let amountDue = Number(priceToPay.textContent)
-  if(amountReceived < amountDue){
+  const amountReceived = Number(amountGiven.value)
+  const goodsPrice = Number(priceToPay.textContent)
+  if(amountReceived < goodsPrice){
     alert("Money not enough")
   }
   else{
-    let changeRiel = (amountReceived - amountDue) * 4091
-    changeAmount.textContent = Math.floor(changeRiel)
+    const rielChangeAmount = (amountReceived - goodsPrice) * 4091
+    changeAmount.textContent = Math.floor(rielChangeAmount)
   }
 }
 

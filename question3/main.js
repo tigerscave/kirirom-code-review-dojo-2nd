@@ -11,7 +11,7 @@ const paymentInput = document.getElementById('paymentInput')
 const calButton = document.getElementById('calculateButton')
 const change = document.getElementById('calculatedChange')
 
-const PriceCalculation = (good, price) => () => {
+const priceCalculation = (good, price) => () => {
     purchaseName.textContent = good
     purchasePrice.textContent = price
     paymentInput.value = ''
@@ -19,8 +19,8 @@ const PriceCalculation = (good, price) => () => {
 
 function calculation() 
 {
-    let payment = parseInt(paymentInput.value)
-    let goodPrice =parseFloat(purchasePrice.textContent)
+    const payment = parseInt(paymentInput.value)
+    const goodPrice =parseFloat(purchasePrice.textContent)
     change.textContent = ((payment-goodPrice)*4091).toFixed(2)
 }
 

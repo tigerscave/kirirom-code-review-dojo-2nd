@@ -22,5 +22,6 @@ function resetButtonClick() {
     taxRatioInput.value = ''
 }
 
+
 calculateButton.addEventListener("click", calculateButtonClick)
 resetButton.addEventListener("click", resetButtonClick)

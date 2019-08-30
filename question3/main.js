@@ -1,23 +1,21 @@
 "use strict"
 
 //write code in here
-const purchaseGoodsName = document.getElementById('purchaseGoodsName')
-const purchaseGoodsPrice= document.getElementById('purchaseGoodsPrice')
+const purchaseNameElement = document.getElementById('purchaseGoodsName')
+const purchasePriceElement = document.getElementById('purchaseGoodsPrice')
 const calculateButton = document.getElementById('calculateButton')
 const calculatedChange = document.getElementById('calculatedChange')
-const paymentInput = document.getElementById('paymentInput')
+const paymentInputElement = document.getElementById('paymentInput')
 const goodsList = document.getElementsByClassName('goods')
 const khrExchangeRate = 4091
-let clickedGoods = ''
 let goodsPrice = 0
 
 function onGoodsClick(goods) {
-    clickedGoods = document.getElementById(goods.id)
-    goodsPrice = clickedGoods.children[1].textContent
+    goodsPrice = goods.children[1].textContent
     goodsPrice = parseFloat(goodsPrice.slice(1,goodsPrice.length))
-    purchaseGoodsName.textContent = clickedGoods.children[0].textContent
-    purchaseGoodsPrice.textContent = goodsPrice
-    paymentInput.value = ''
+    purchaseNameElement.textContent = goods.children[0].textContent
+    purchasePriceElement.textContent = goodsPrice
+    paymentInputElement.value = ''
     calculatedChange.textContent = ''
 }
 

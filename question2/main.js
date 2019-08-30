@@ -8,8 +8,8 @@ const taxIncludedElement = document.getElementById('taxIncludedPrice')
 const calculateButton = document.getElementById('calculateButton')
 const resetButton = document.getElementById('resetButton')
 
-
 function calculateTaxPrice(price, taxValue) {
+  validateTaxRatio(taxValue)
   const taxPrice = (price * taxValue) / 100
   const taxIncludedPrice = Math.round(price + taxPrice)
 
@@ -18,6 +18,12 @@ function calculateTaxPrice(price, taxValue) {
 
 function resetElements() {
   display(0, 0, '', '')
+}
+
+function validateTaxRatio(taxValue) {
+  if(taxValue < 0 || taxValue > 60) {
+    alert('Invalid tax ratio entered.')
+  }
 }
 
 function display(tax, priceIncludedTax, priceInputBoxValue, taxInputBoxValue) {

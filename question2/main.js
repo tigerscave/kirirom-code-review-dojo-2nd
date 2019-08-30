@@ -5,8 +5,8 @@ const priceInput = document.getElementById('priceInput')
 const taxInput = document.getElementById('taxRatioInput')
 const calculateBtn = document.getElementById('calculateButton')
 const resetBtn = document.getElementById('resetButton')
-const taxPrice = document.getElementById('taxPrice')
-const taxIncludedPrice = document.getElementById('taxIncludedPrice')
+const taxPriceEle = document.getElementById('taxPrice')
+const taxIncludedPriceEle = document.getElementById('taxIncludedPrice')
 
 const clearInput = () => {
     priceInput.value = null
@@ -14,21 +14,25 @@ const clearInput = () => {
 }
 
 const onCalculateTaxBtnClicked = () => {
-    let taxInputValue =  parseInt(taxInput.value) || 0
-    let priceInputValue = parseInt(priceInput.value) || 0
-    let totalPrice = Math.floor(priceInputValue + (priceInputValue * taxInputValue/100))
-    taxPrice.textContent = taxInputValue
-    taxIncludedPrice.textContent = totalPrice
+    let taxInputValue =  parseInt(taxInput.value)/100 || false
+    let priceInputValue = Math.floor(priceInput.value) || false
+    let totalPrice = Math.floor(priceInputValue + (priceInputValue * taxInputValue))
+
+    if(!(taxInputValue || priceInputValue) || isNaN(taxInputValue) || isNaN(priceInputValue))
+        return alert('Input must be a number')
+
+    taxPriceEle.textContent = taxInputValue
+    taxIncludedPriceEle.textContent = totalPrice
     clearInput()
 }
 
-const onBtnResetClicked = () => {
-    taxPrice.textContent = '0'
-    taxIncludedPrice.textContent = '0'
+const onResetBtnClicked = () => {
+    taxPriceEle.textContent = '0'
+    taxIncludedPriceEle.textContent = '0'
     clearInput()
 }
 
 calculateBtn.addEventListener('click', onCalculateTaxBtnClicked)
-resetBtn.addEventListener('click', onBtnResetClicked)
+resetBtn.addEventListener('click', onResetBtnClicked)
 
 

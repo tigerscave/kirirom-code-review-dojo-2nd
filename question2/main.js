@@ -11,10 +11,18 @@ let priceNumber = 0
 let taxNumber = 0
 
 function calculateTax(){
-	taxNumber = Math.floor(parseInt(taxElement.value) * parseInt(priceElement.value)/100)
-	taxPrice.textContent = taxNumber
-	priceNumber = Math.floor(parseInt(priceElement.value) + taxNumber)
-	taxIncludedPrice.textContent = priceNumber
+	if(isNaN(priceElement.value) || isNaN(taxElement.value) || priceElement.value =='' || taxElement.value == '')
+	{
+		alert("Invalid input entered");
+	}
+	else
+	{
+		taxNumber = Math.floor(parseInt(taxElement.value) * parseInt(priceElement.value)/100)
+		taxPrice.textContent = taxNumber
+		priceNumber = Math.floor(parseInt(priceElement.value) + taxNumber)
+		taxIncludedPrice.textContent = priceNumber
+		
+	}
 }
 
 function resetAll(){

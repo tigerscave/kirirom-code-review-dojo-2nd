@@ -16,7 +16,7 @@ const clearInput = () => {
 const onCalculateTaxBtnClicked = () => {
     let taxInputValue =  parseInt(taxInput.value) || 0
     let priceInputValue = parseInt(priceInput.value) || 0
-    let totalPrice = parseInt(priceInputValue + (priceInputValue * taxInputValue/100))
+    let totalPrice = Math.floor(priceInputValue + (priceInputValue * taxInputValue/100))
     taxPrice.textContent = taxInputValue
     taxIncludedPrice.textContent = totalPrice
     clearInput()

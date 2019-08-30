@@ -7,11 +7,11 @@ const resetButton = document.getElementById("reset")
 
 let number = 0
 
-function calculate(operator) {
-    if(operator == '+') {
+function counter(action) {
+    if(action == '+') {
         ++ number
     }
-    else if(operator == '-') {
+    else if(action == '-') {
         -- number
     }
     else {
@@ -20,6 +20,6 @@ function calculate(operator) {
     numberElement.textContent = number
 }
 
-plusButton.addEventListener('click', () => calculate('+'))
-minusButton.addEventListener('click', () => calculate('-'))
-resetButton.addEventListener('click', () => calculate('_'))
+plusButton.addEventListener('click', () => counter('+'))
+minusButton.addEventListener('click', () => counter('-'))
+resetButton.addEventListener('click', () => counter('reset'))

@@ -22,6 +22,7 @@ let selectedGoodsPrice = 0
 
 function displayProductNameAndPrice(product, price) {
   paymentInput.value = ''
+  calculatedChangeElement.innerHTML = ''
   goodsNameElement.innerHTML = product
   goodsPriceElement.innerHTML = price
   selectedGoodsPrice = price

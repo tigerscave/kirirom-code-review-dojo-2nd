@@ -24,9 +24,9 @@ function display(itemName, price)
 
 function calculateChange()
 {
-    let inputPrice = Number(gonnaPayInput.value)
-    let changeInUSD = inputPrice - Number(itemPrice.textContent)
-    let changeInKHR = changeInUSD * 4091
+    const inputPrice = Number(gonnaPayInput.value)
+    const changeInUSD = inputPrice - Number(itemPrice.textContent)
+    const changeInKHR = changeInUSD * 4091
 
     changeDisplay.textContent = changeInKHR.toFixed(2)
 }

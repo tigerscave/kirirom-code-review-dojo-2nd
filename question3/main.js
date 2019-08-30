@@ -29,9 +29,9 @@ function calculate()
     change.textContent = Math.round(changeMoney)
     payment.value = ''
 }
-cocacolaButton.addEventListener('click', () => productInfo('Coca-cola', 1.15))
-angkorbeerButton.addEventListener('click', () => productInfo('Angkor Beer', 2.5))
-moringalunchButton.addEventListener('click', () => productInfo('Moringa Lunch', 3.5))
-bookButton.addEventListener('click', () => productInfo('Book', 4.5))
+cocacolaButton.addEventListener('click', () => displayProduct('Coca-cola', 1.15))
+angkorbeerButton.addEventListener('click', () => displayProduct('Angkor Beer', 2.5))
+moringalunchButton.addEventListener('click', () => displayProduct('Moringa Lunch', 3.5))
+bookButton.addEventListener('click', () => displayProduct('Book', 4.5))
 calculateButton.addEventListener('click', () => calculate())
 

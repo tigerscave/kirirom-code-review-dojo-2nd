@@ -8,8 +8,8 @@ const taxPriceElement = document.getElementById("taxPrice")
 const taxIncludedPriceElement = document.getElementById("taxIncludedPrice")
 
 function calculateButtonClick() {
-    let priceInputValue = parseInt(priceInput.value)
-    let taxRatioInputValue = parseInt(taxRatioInput.value)
+    const priceInputValue = parseInt(priceInput.value)
+    const taxRatioInputValue = parseInt(taxRatioInput.value)
 
     if(taxRatioInputValue < 0 || taxRatioInputValue > 60 || isNaN(taxRatioInputValue)) {
         alert("Invalid tax")
@@ -22,7 +22,7 @@ function calculateButtonClick() {
         return
     }
     else {
-        let taxPrice = parseInt(priceInputValue * (taxRatioInputValue / 100))
+        const taxPrice = parseInt(priceInputValue * (taxRatioInputValue / 100))
         taxPriceElement.textContent = taxPrice
         taxIncludedPriceElement.textContent = priceInputValue + taxPrice
     }    

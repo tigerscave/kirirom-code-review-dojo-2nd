@@ -5,24 +5,24 @@ const coke = document.getElementById('cocaCola')
 const angkor = document.getElementById('angkorBeer')
 const lunch = document.getElementById('moringaLunch')
 const book = document.getElementById('book')
-const goodsToPurchase = document.getElementById('purchaseGoodsName')
-const priceToPay = document.getElementById('purchaseGoodsPrice')
-const amountGiven = document.getElementById('paymentInput')
+const purchaseGoodsName = document.getElementById('purchaseGoodsName')
+const purchaseGoodsPrice = document.getElementById('purchaseGoodsPrice')
+const paymentInputElement = document.getElementById('paymentInput')
 const calculateButton = document.getElementById('calculateButton')
 const changeAmount = document.getElementById('calculatedChange')
 
 function showDetail(name, price){
-    goodsToPurchase.textContent = name
-    priceToPay.textContent = price 
+    purchaseGoodsName.textContent = name
+    purchaseGoodsPrice.textContent = price 
 }
 function calculateChange(){
-  const amountReceived = Number(amountGiven.value)
-  const goodsPrice = Number(priceToPay.textContent)
-  if(amountReceived < goodsPrice){
+  const payment = Number(paymentInputElement.value)
+  const goodsPrice = Number(purchaseGoodsPrice.textContent)
+  if(payment < goodsPrice){
     alert("Money not enough")
   }
   else{
-    const rielChangeAmount = (amountReceived - goodsPrice) * 4091
+    const rielChangeAmount = (payment - goodsPrice) * 4091
     changeAmount.textContent = Math.floor(rielChangeAmount)
   }
 }

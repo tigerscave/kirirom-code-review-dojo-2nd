@@ -11,7 +11,7 @@ function handleIncrease() {
 }
 
 function handleReset(){
-  num=0
+  num = 0
   count.textContent = num
 }
 

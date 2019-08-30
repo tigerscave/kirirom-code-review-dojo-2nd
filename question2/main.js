@@ -30,5 +30,5 @@ function resetButtonClick(){
     taxIncludedPriceElement.textContent = 0
 }
 
-calculateButton.addEventListener('click', () => calculateButtonClick())
-resetButton.addEventListener('click', () => resetButtonClick())
+calculateButton.addEventListener('click', calculateButtonClick)
+resetButton.addEventListener('click', resetButtonClick)

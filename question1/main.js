@@ -6,7 +6,7 @@ const textElement = document.getElementById('number')
 var count = 0
 function changeNum(number)
 {
-  textElement.textContent=number
+  textElement.textContent = number
 }
 plusButton.addEventListener('click', () => changeNum(++count))
 minusButton.addEventListener('click', () => changeNum(--count))

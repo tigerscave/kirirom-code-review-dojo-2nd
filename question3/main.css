@@ -1,0 +1,14 @@
+.goods-container {
+  display: flex;
+}
+
+.goods {
+  border: 1px solid gray;
+  margin-right: 1rem;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.goods:hover {
+  background: orange;
+}

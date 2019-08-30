@@ -17,7 +17,7 @@ function calculateButtonClick() {
         return
     }
     else if(isNaN(priceInputValue)) {
-        alert("IInvalid price")
+        alert("Invalid price")
         resetButtonClick()
         return
     }

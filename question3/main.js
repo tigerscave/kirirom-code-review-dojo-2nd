@@ -7,7 +7,7 @@ const calculateButton = document.getElementById('calculateButton')
 const calculatedChange = document.getElementById('calculatedChange')
 const paymentInput = document.getElementById('paymentInput')
 const goodsList = document.getElementsByClassName('goods')
-let khrExchangeRate = 4091
+const khrExchangeRate = 4091
 let clickedGoods = ''
 let goodsPrice = 0
 

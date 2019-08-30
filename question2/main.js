@@ -18,11 +18,9 @@ function calculateButtonClick(){
 function resetButtonClick(){
     taxPriceDisplay.textContent = 0
     taxIncludedPriceDisplay.textContent = 0
-    clearInput()
-}
-function clearInput(){
     priceInput.value = ''
     taxRatioInput.value = ''
 }
+
 calculateButton.addEventListener("click", calculateButtonClick)
 resetButton.addEventListener("click", resetButtonClick)

@@ -5,12 +5,15 @@ const resetButton = document.getElementById("resetButton")
 const priceInput = document.getElementById('priceInput')
 const taxRatioInput = document.getElementById('taxRatioInput')
 const taxPriceElement = document.getElementById('taxPrice')
-const taxIncludedPriceElement = document.getElementById('taxIncludedPrice')
+const totalPriceElement = document.getElementById('taxIncludedPrice')
 
 function calculateTax() {
-	if (taxRatioInput.value >= 0 && taxRatioInput.value <= 60) {
-		taxPriceElement.textContent = ((parseInt(priceInput.value) * parseInt(taxRatioInput.value)) / 100) | 0
-		taxIncludedPriceElement.textContent = parseInt(taxPriceElement.textContent) + parseInt(priceInput.value)
+	const taxRatio = parseInt(taxRatioInput.value)
+	const price = parseInt(priceInput.value)
+
+	if (taxRatio >= 0 && taxRatio <= 60) {
+		taxPriceElement.textContent = ((price * taxRatio) / 100) | 0
+		totalPriceElement.textContent = parseInt(taxPriceElement.textContent) + price
 	}
 	else {
 		alert("Invalid tax ratio entered")
@@ -19,7 +22,7 @@ function calculateTax() {
 
 function resetCalculation() {
 	taxPriceElement.textContent = "0"
-	taxIncludedPriceElement.textContent = "0"
+	totalPriceElement.textContent = "0"
 	priceInput.value = ""
 	taxRatioInput.value = ""
 }

@@ -18,13 +18,13 @@ function clearInput () {
 
 calculateButton.addEventListener('click', () => {
 
-    if(isNaN(priceInput.value) || isNaN(taxInput.value)) {
+    if(isNaN(priceInput.value) || isNaN(taxInput.value) || priceInput.value == '' || taxInput.value == '') {
         alert('Invalid Input')
     } 
 
     const price = parseInt(priceInput.value)
     const taxRatio = parseInt(taxInput.value)
-    
+
     const taxPriceResult = Math.floor((price * taxRatio) / 100)
 
     taxPrice.textContent = taxPriceResult

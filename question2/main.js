@@ -8,7 +8,7 @@ const total = document.getElementById("taxIncludedPrice")
 
 function calculateTaxPrice(){
 	if (parseInt(taxInput.value) > 0 && parseInt(taxInput.value) <= 60){
-		taxPrice.textContent = (parseInt(taxInput.value) * parseInt(priceInput.value)) / 100
+		taxPrice.textContent = parseInt((parseInt(taxInput.value) * parseInt(priceInput.value)) / 100)
 		total.textContent = parseInt(taxPrice.textContent) + parseInt(priceInput.value)
 	}
 	else{

@@ -1,4 +1,4 @@
-"use strict"
+'use strict'
 
 //write code in here
 const priceInput = document.getElementById('priceInput')

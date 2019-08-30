@@ -3,19 +3,19 @@ const plusButton = document.getElementById('plus')
 const minusButton = document.getElementById('minus')
 const resetButton = document.getElementById('reset')
 var output = 0
-function doOperation(operation)
+function calculate(calculation)
 {
-  if(operation == 'plus')
+  if(calculation == 'plus')
   {
     output += 1
     number.textContent = output
   }
-  else if(operation == 'minus')
+  else if(calculation == 'minus')
   {
     output -= 1
     number.textContent = output
   }
-  else if(operation == "reset")
+  else if(calculation == "reset")
   {
     output = 0 
     number.textContent = output
@@ -27,6 +27,6 @@ function doOperation(operation)
   
 }
 
-plusButton.addEventListener('click', () => doOperation("plus"))
-minusButton.addEventListener('click', () => doOperation("minus"))
-resetButton.addEventListener('click', () => doOperation("reset")) 
+plusButton.addEventListener('click', () => calculate("plus"))
+minusButton.addEventListener('click', () => calculate("minus"))
+resetButton.addEventListener('click', () => calculate("reset")) 

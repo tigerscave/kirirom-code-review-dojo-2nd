@@ -7,9 +7,11 @@ const total = document.getElementById("taxIncludedPrice")
 
 
 function calculateTaxPrice(){
-	if (parseInt(taxInput.value) > 0 && parseInt(taxInput.value) <= 60){
-		taxPrice.textContent = parseInt((parseInt(taxInput.value) * parseInt(priceInput.value)) / 100)
-		total.textContent = parseInt(taxPrice.textContent) + parseInt(priceInput.value)
+	const taxValue = parseInt(taxInput.value)
+	const priceValue = parseInt(priceInput.value)
+	if (taxValue > 0 && taxValue <= 60){
+		taxPrice.textContent = parseInt((taxValue * priceValue) / 100)
+		total.textContent = parseInt(taxPrice.textContent) + priceValue
 	}
 	else{
 		alert("Invalid tax radio entered")

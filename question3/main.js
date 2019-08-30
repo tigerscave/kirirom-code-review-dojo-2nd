@@ -19,7 +19,9 @@ const onGoodsClicked = (goodsName, price) => {
 
 const onCalculateBtnClicked = () => {
     let paymentVal = paymentInput.value
+
     if(isNaN(paymentVal) || paymentVal === '') return
+
     let result = Math.floor((paymentVal -  Number(purchaseGoodsPrice.textContent)) * 4091)
     calculatedChange.innerHTML = result
     paymentInput.value = null

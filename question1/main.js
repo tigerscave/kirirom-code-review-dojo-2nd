@@ -9,7 +9,7 @@ const plusButton = document.getElementById('plus')
 const minusButton = document.getElementById('minus')
 const resetButton = document.getElementById('reset')
 
-function operation(operator) {
+function operate(operator) {
   if (operator == '+') {
     output += 1
   } else if (operator == '-') {
@@ -22,6 +22,6 @@ function reset() {
   numberElement.textContent = output
 }
 
-plusButton.addEventListener('click', () => operation('+'))
-minusButton.addEventListener('click', () => operation('-'))
+plusButton.addEventListener('click', () => operate('+'))
+minusButton.addEventListener('click', () => operate('-'))
 resetButton.addEventListener('click', reset)

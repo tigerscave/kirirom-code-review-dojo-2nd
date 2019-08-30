@@ -33,9 +33,9 @@ const exchangeRate = 4091
 let price = 0
 
 function calculateChange() {
-  let change = parseInt(paymentInput.value) - price
-  change = Math.floor(change * exchangeRate)
-  calculatedChange.textContent = change
+  let changeInDollar = parseInt(paymentInput.value) - price
+  let changeInRiel = Math.floor(changeInDollar * exchangeRate)
+  calculatedChange.textContent = changeInRiel
 }
 function showGoodDetials(id) {
   paymentInput.value = ''

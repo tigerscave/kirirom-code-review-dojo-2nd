@@ -26,10 +26,10 @@ function reset() {
     taxRatioInput.value = ''
 }
 
-function validTax(taxRatio){
-    if(taxRatio<0 || taxRatio>60)
+function validTax(taxRatio) {
+    if(taxRatio < 0 || taxRatio > 60)
     alert('Invalid tax ratio entered')
-    return fasle
+    return false
 }
 
 calculateButton.addEventListener('click', calculateTax)

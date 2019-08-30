@@ -19,7 +19,9 @@ function display(goodsName, goodsPrice) {
 }
 
 function calculatedChangeClick() { 
-    calculatedChange.textContent = parseInt((paymentInput.value - purchaseGoodsPriceDisplay.textContent) * 4091)
+    const payment = paymentInput.value
+    const price = purchaseGoodsPriceDisplay.textContent
+    calculatedChange.textContent = parseInt((payment - price) * 4091)
 }
 
 colaCola.addEventListener('click', () => display("Coca-Cola", 1.15))

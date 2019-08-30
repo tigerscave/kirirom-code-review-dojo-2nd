@@ -10,8 +10,8 @@ const resetButton = document.getElementById('resetButton')
 
 
 function calculateTaxPrice(price, taxValue) {
-  let taxPrice = (price * taxValue) / 100
-  let taxIncludedPrice = Math.round(price + taxPrice)
+  const taxPrice = (price * taxValue) / 100
+  const taxIncludedPrice = Math.round(price + taxPrice)
 
   display(Math.round(taxPrice), taxIncludedPrice, price, taxValue)
 }
@@ -28,4 +28,4 @@ function display(tax, priceIncludedTax, priceInputBoxValue, taxInputBoxValue) {
 }
 
 calculateButton.addEventListener('click', () => calculateTaxPrice(parseFloat(priceInput.value), parseFloat(taxInput.value)))
-resetButton.addEventListener('click', () => resetElements())
+resetButton.addEventListener('click', resetElements)

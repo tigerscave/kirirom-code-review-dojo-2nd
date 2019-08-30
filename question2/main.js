@@ -11,7 +11,11 @@ function calculateButtonClick() {
     let priceInputValue = parseInt(priceInput.value)
     let taxRatioInputValue = parseInt(taxRatioInput.value)
 
-    if(isNaN(priceInputValue)) {
+    if(taxRatioInputValue < 0 || taxRatioInputValue > 60) {
+        alert("Invalid tax")
+        return
+    }
+    else if(isNaN(priceInputValue)) {
         priceInputValue = 0
     }
     else if(isNaN(taxRatioInputValue)) {

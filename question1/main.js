@@ -7,15 +7,15 @@ const plusBtn = document.getElementById('plus')
 const minusBtn = document.getElementById('minus')
 const resetBtn = document.getElementById('reset')
 
-const onBtnClicked = (operator) => () => {
-  if (operator === '+') number.textContent = (++initNum).toString()
-  else if(operator === '-') number.textContent = (--initNum).toString()
+const onBtnClicked = (operation) => () => {
+  if (operation === 'plus') number.textContent = (++initNum).toString()
+  else if(operation === 'minus') number.textContent = (--initNum).toString()
   else {
     initNum = 0
     number.textContent = '0'
   }
 }
 
-plusBtn.addEventListener('click', onBtnClicked('+'))
-minusBtn.addEventListener('click', onBtnClicked('-'))
-resetBtn.addEventListener('click', onBtnClicked(''))
+plusBtn.addEventListener('click', onBtnClicked('plus'))
+minusBtn.addEventListener('click', onBtnClicked('minus'))
+resetBtn.addEventListener('click', onBtnClicked('reset'))
